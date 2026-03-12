@@ -1,0 +1,67 @@
+[
+  {
+    "label": "Run: api-gateway-bff (8080)",
+    "command": "./mvnw spring-boot:run",
+    "cwd": "$ZED_WORKTREE_ROOT/api-gateway-bff"
+  },
+  {
+    "label": "Run: master-service (8081)",
+    "command": "./mvnw spring-boot:run",
+    "cwd": "$ZED_WORKTREE_ROOT/master-service"
+  },
+  {
+    "label": "Run: sub-service (8082)",
+    "command": "./mvnw spring-boot:run",
+    "cwd": "$ZED_WORKTREE_ROOT/sub-service"
+  },
+  {
+    "label": "Run: notification-service (8083)",
+    "command": "./mvnw spring-boot:run",
+    "cwd": "$ZED_WORKTREE_ROOT/notification-service"
+  },
+  {
+    "label": "Build: all services",
+    "command": "./mvnw clean package -DskipTests",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Build: api-gateway-bff",
+    "command": "./mvnw clean package -DskipTests",
+    "cwd": "$ZED_WORKTREE_ROOT/api-gateway-bff"
+  },
+  {
+    "label": "Build: master-service",
+    "command": "./mvnw clean package -DskipTests",
+    "cwd": "$ZED_WORKTREE_ROOT/master-service"
+  },
+  {
+    "label": "Build: sub-service",
+    "command": "./mvnw clean package -DskipTests",
+    "cwd": "$ZED_WORKTREE_ROOT/sub-service"
+  },
+  {
+    "label": "Build: notification-service",
+    "command": "./mvnw clean package -DskipTests",
+    "cwd": "$ZED_WORKTREE_ROOT/notification-service"
+  },
+  {
+    "label": "Test: api-gateway-bff",
+    "command": "./mvnw test",
+    "cwd": "$ZED_WORKTREE_ROOT/api-gateway-bff"
+  },
+  {
+    "label": "Test: master-service",
+    "command": "./mvnw test",
+    "cwd": "$ZED_WORKTREE_ROOT/master-service"
+  },
+  {
+    "label": "Test: sub-service",
+    "command": "./mvnw test",
+    "cwd": "$ZED_WORKTREE_ROOT/sub-service"
+  },
+  {
+    "label": "Test: notification-service",
+    "command": "./mvnw test",
+    "cwd": "$ZED_WORKTREE_ROOT/notification-service"
+  }
+]

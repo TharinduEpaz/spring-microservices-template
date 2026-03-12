@@ -1,0 +1,30 @@
+# config-repo/api-gateway-bff.yml
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: master-service-route
+              uri: http://localhost:8081
+              predicates:
+                - Path=/master/**
+              filters:
+                - StripPrefix=1
+
+            - id: sub-service-route
+              uri: http://localhost:8082
+              predicates:
+                - Path=/sub/**
+              filters:
+                - StripPrefix=1
+
+            - id: notification-service-route
+              uri: http://localhost:8083
+              predicates:
+                - Path=/notification/**
+              filters:
+                - StripPrefix=1
