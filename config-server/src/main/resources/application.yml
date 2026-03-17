@@ -10,5 +10,12 @@ spring:
     config:
       server:
         native:
-          # This points to a folder named 'config-repo' in your root workspace
           search-locations: classpath:/config-repo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}

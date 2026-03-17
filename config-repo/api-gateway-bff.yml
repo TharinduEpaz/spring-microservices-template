@@ -6,21 +6,21 @@ spring:
     gateway:
       routes:
         - id: master-service
-          uri: http://localhost:8081
+          uri: lb://master-service
           predicates:
             - Path=/api/master/**
           filters:
             - RewritePath=/api/master(?<segment>/?.*), /$\{segment}
 
         - id: sub-service
-          uri: http://localhost:8082
+          uri: lb://sub-service
           predicates:
             - Path=/api/sub/**
           filters:
             - RewritePath=/api/sub(?<segment>/?.*), /$\{segment}
 
         - id: notification-service
-          uri: http://localhost:8083
+          uri: lb://notification-service
           predicates:
             - Path=/api/notification/**
           filters:

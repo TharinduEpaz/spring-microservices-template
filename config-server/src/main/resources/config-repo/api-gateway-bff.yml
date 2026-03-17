@@ -9,21 +9,21 @@ spring:
         webflux:
           routes:
             - id: master-service-route
-              uri: http://localhost:8081
+              uri: lb://master-service
               predicates:
                 - Path=/master/**
               filters:
                 - StripPrefix=1
 
             - id: sub-service-route
-              uri: http://localhost:8082
+              uri: lb://sub-service
               predicates:
                 - Path=/sub/**
               filters:
                 - StripPrefix=1
 
             - id: notification-service-route
-              uri: http://localhost:8083
+              uri: lb://notification-service
               predicates:
                 - Path=/notification/**
               filters:

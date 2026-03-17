@@ -17,6 +17,7 @@
 	<name>spring-microservice-template</name>
 
 	<modules>
+		<module>discovery-server</module>
 		<module>api-gateway-bff</module>
 		<module>master-service</module>
 		<module>sub-service</module>

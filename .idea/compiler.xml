@@ -9,11 +9,21 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
-        <module name="api-gateway-bff" />
         <module name="sub-service" />
         <module name="config-server" />
+        <module name="discovery-server" />
         <module name="master-service" />
         <module name="notification-service" />
+      </profile>
+      <profile name="Annotation profile for api-gateway-bff" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="api-gateway-bff" />
       </profile>
     </annotationProcessing>
   </component>
@@ -21,6 +31,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway-bff" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="master-service" options="-parameters" />
       <module name="notification-service" options="-parameters" />
       <module name="spring-microservice-template" options="-parameters" />
